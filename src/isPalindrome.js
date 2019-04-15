@@ -20,6 +20,8 @@
  */
 function isPalindrome(str) {
   // write code here
+  let palindrome = str.replace(/[^A-Za-z]+/g, '').toLowerCase();
+  return (palindrome === palindrome.split('').reverse().join(''));
 }
 
 module.exports = isPalindrome;
