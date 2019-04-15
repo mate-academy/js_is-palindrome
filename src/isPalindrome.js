@@ -18,8 +18,11 @@
  *
  * @return {boolean}
  */
-function isPalindrome(str) {
-  // write code here
+function isPalindrome(string) {
+  const replacedString = string.replace(/[^a-z]/gi, '');
+  const reversedString = replacedString.split('').reverse().join('');
+  const expression = new RegExp(`${replacedString}`, 'i');
+  return expression.test(reversedString);
 }
 
 module.exports = isPalindrome;
