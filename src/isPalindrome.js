@@ -21,11 +21,7 @@
 function isPalindrome(str) {
   const onlyLetters = str.replace(/\W/g, '').toLowerCase();
   const palindrop = onlyLetters.split('').reverse().join('');
-  if (palindrop === onlyLetters) {
-    return true;
-  } else {
-    return false;
-  }
+  return palindrop === onlyLetters;
 }
 
 module.exports = isPalindrome;
