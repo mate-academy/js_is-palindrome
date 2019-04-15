@@ -19,7 +19,17 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const lettersArray = str.match(/\w/gi);
+  const IsNotEmptyArray = lettersArray !== null;
+  if (IsNotEmptyArray) {
+    return lettersArray
+      .join()
+      .toLowerCase() === lettersArray
+      .reverse().join()
+      .toLowerCase();
+  } else if (str === '') {
+    return true;
+  }
 }
 
 module.exports = isPalindrome;
