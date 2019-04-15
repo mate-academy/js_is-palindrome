@@ -29,8 +29,8 @@ function isPalindrome(str) {
   };
 
   let notLatinicRegExp = /\W/g;
-  let charsOnly = str.replace(notLatinicRegExp, '');
-  let charsOnlyReversed = reverseStr(charsOnly);
+  let charsOnly = str.replace(notLatinicRegExp, '').toLowerCase();
+  let charsOnlyReversed = reverseStr(charsOnly).toLowerCase();
   return charsOnly === charsOnlyReversed;
 };
 
