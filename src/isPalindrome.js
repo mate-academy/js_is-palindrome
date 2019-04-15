@@ -20,6 +20,11 @@
  */
 function isPalindrome(str) {
   // write code here
+  let lineOfWords = str.toLowerCase().replace(/[^\w]/g, '');
+  return lineOfWords === lineOfWords.split('').reverse().join('');
 }
+
+isPalindrome('A man, a plan, a canal: Panama');
+isPalindrome('123 hello aaaccc');
 
 module.exports = isPalindrome;
