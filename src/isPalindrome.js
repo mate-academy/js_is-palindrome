@@ -21,8 +21,7 @@
 function isPalindrome(string) {
   const replacedString = string.replace(/[^a-z]/gi, '');
   const reversedString = replacedString.split('').reverse().join('');
-  const expression = new RegExp(`${replacedString}`, 'i');
-  return expression.test(reversedString);
+  return replacedString.toLowerCase() === reversedString.toLowerCase();
 }
 
 module.exports = isPalindrome;
