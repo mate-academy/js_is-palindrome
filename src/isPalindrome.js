@@ -22,8 +22,8 @@ function isPalindrome(str) {
   if (str === '') {
     return true;
   }
-  let string = str.toLowerCase().match(/[a-z]/g);
-  let reversedString = string.slice().reverse();
+  let string = str.toLowerCase().replace(/[^a-z]/g, '');
+  let reversedString = string.slice().split('').reverse();
   for (let i = 0; i <= string.length; i++) {
     if (string[i] !== reversedString[i]) {
       return false;
