@@ -20,13 +20,9 @@
  */
 function isPalindrome(str) {
   const lettersArray = str.match(/\w/gi);
-  const IsNotEmptyArray = lettersArray !== null;
-  if (IsNotEmptyArray) {
-    return lettersArray
-      .join()
-      .toLowerCase() === lettersArray
-      .reverse().join()
-      .toLowerCase();
+  if (lettersArray) {
+    return lettersArray.join().toLowerCase() ===
+    lettersArray.reverse().join().toLowerCase();
   } else if (str === '') {
     return true;
   }
