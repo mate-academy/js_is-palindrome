@@ -22,11 +22,7 @@ function isPalindrome(str) {
   // write code here
   const match = str.replace(/\W/g, '').toLocaleLowerCase();
   const palindrome = match.split('').reverse().join('');
-  if (match === palindrome) {
-    return true;
-  } else {
-    return false;
-  }
+  return match === palindrome;
 }
 
 module.exports = isPalindrome;
