@@ -20,7 +20,7 @@
  */
 function isPalindrome(str) {
   // write code here
-  let palindrome = str.replace(/[^A-Za-z]+/g, '').toLowerCase();
+  let palindrome = str.replace(/\W/g, '').toLowerCase();
   return (palindrome === palindrome.split('').reverse().join(''));
 }
 
