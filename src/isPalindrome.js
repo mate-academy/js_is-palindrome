@@ -20,6 +20,16 @@
  */
 function isPalindrome(str) {
   // write code here
+  // I tried to do this task only with the help of regular expressions...
+  // Here is what got.
+  const alphabetStr = str.replace(/\W/g, '');
+  const alphabetStrCenter = alphabetStr.length / 2;
+  let testStr = '$';
+  for (let i = 0; i < alphabetStrCenter; i++) {
+    testStr = alphabetStr[i] + testStr;
+  }
+  let regExpPalindrome = new RegExp(testStr, 'i');
+  return regExpPalindrome.test(alphabetStr);
 }
 
 module.exports = isPalindrome;
