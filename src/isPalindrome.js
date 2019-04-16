@@ -19,7 +19,12 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
-}
+  // i know about str.reverse()
+
+  let notLatinicRegExp = /\W/g;
+  let charsOnly = str.replace(notLatinicRegExp, '').toLowerCase();
+  let charsOnlyReversed = charsOnly.split('').reverse().join('');
+  return charsOnly === charsOnlyReversed;
+};
 
 module.exports = isPalindrome;
