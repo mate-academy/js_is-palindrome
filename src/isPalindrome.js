@@ -19,8 +19,8 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const regularExpression = /[\W_]/g;
-  const modifiedStr = str.toLowerCase().replace(regularExpression, '');
+  const alphanumericRegExp = /[\W_]/g;
+  const modifiedStr = str.toLowerCase().replace(alphanumericRegExp, '');
   const reversedStr = modifiedStr.split('').reverse().join('');
   return reversedStr === modifiedStr;
 }
