@@ -20,17 +20,10 @@
  */
 function isPalindrome(str) {
   // i know about str.reverse()
-  const reverseStr = function(str) {
-    let revStr = '';
-    for (let i = str.length - 1; i >= 0; i--) {
-      revStr += str[i];
-    }
-    return revStr;
-  };
 
   let notLatinicRegExp = /\W/g;
   let charsOnly = str.replace(notLatinicRegExp, '').toLowerCase();
-  let charsOnlyReversed = reverseStr(charsOnly).toLowerCase();
+  let charsOnlyReversed = charsOnly.split('').reverse().join('');
   return charsOnly === charsOnlyReversed;
 };
 
