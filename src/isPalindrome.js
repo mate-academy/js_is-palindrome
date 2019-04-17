@@ -22,8 +22,7 @@ function isPalindrome(str) {
   if (str.length === 0) {
     return true;
   }
-  str = str.toLowerCase();
-  return str.match(/[a-z]+/g).join('') ===
-  str.match(/[a-z]+/g).join('').split('').reverse().join('');
+  str = str.toLowerCase().match(/[a-z]+/g).join('');
+  return str === str.split('').reverse().join('');
 }
 module.exports = isPalindrome;
