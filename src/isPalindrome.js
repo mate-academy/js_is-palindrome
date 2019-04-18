@@ -24,12 +24,8 @@ function isPalindrome(str) {
   }
   let string = str.toLowerCase().replace(/[^a-z]/g, '');
   let reversedString = string.slice().split('').reverse();
-  for (let i = 0; i <= string.length; i++) {
-    if (string[i] !== reversedString[i]) {
-      return false;
-    }
-  }
-  return true;
+  return reversedString.every(i => string
+    .indexOf(i) === reversedString.indexOf(i));
 }
 
 module.exports = isPalindrome;
