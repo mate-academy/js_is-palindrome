@@ -22,15 +22,10 @@ function isPalindrome(str) {
   if (str === '') {
     return true;
   }
-  const match = str.match(/\w/g);
-  const reverseMatch = str.match(/\w/g).reverse().map(letter => {
-    return letter.toLowerCase();
-  }).join('');
-  match.length = Math.floor(match.length / 2);
-  let pattern = match.map(letter => {
-    return letter.toLowerCase();
-  }).join('');
-  let regex = new RegExp(pattern, 'g');
-  return regex.test(reverseMatch);
+  const match = str.match(/\w/g).map(letter => letter.toLowerCase());
+  const pattern = match.slice(0, Math.floor(match.length / 2));
+  const regex = new RegExp(pattern, 'g');
+  return regex.test(match.reverse());
 }
+
 module.exports = isPalindrome;
