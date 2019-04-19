@@ -23,9 +23,8 @@ function isPalindrome(str) {
     return true;
   }
   let string = str.toLowerCase().replace(/[^a-z]/g, '');
-  let reversedString = string.slice().split('').reverse();
-  return reversedString.every(i => string
-    .indexOf(i) === reversedString.indexOf(i));
+  let reversedString = string.split('').reverse().join(''); 
+  return string === reversedString;
 }
 
 module.exports = isPalindrome;
