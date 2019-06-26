@@ -19,7 +19,19 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  if (str.length === 0) {
+    return true;
+  }
+
+  const letters = str.toUpperCase().match(/[A-Z]/g);
+
+  for (let i = 0; i < letters.length / 2; i++) {
+    if (letters[i] !== letters[letters.length - 1 - i]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = isPalindrome;
