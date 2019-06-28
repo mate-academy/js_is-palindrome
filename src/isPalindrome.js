@@ -18,13 +18,12 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const inputedStr = str.replace(/[^A-Za-zА-Яа-яЁё]/g, '')
-    .toUpperCase();
   const reversedStr = str.replace(/[^A-Za-zА-Яа-яЁё]/g, '')
     .split('')
     .reverse()
     .join('')
     .toUpperCase();
-  return inputedStr === reversedStr;
+  return str.replace(/[^A-Za-zА-Яа-яЁё]/g, '')
+    .toUpperCase() === reversedStr;
 };
 module.exports = isPalindrome;
