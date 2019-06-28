@@ -19,7 +19,39 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  if (!str) {
+    return true;
+  }
+
+  function stringClearing(strForClear) {
+    return strForClear
+      .toLowerCase()
+      .match(/\w/g)
+      .join('');
+  }
+
+  const clearString = stringClearing(str);
+
+  function stringReverse(strForReverse) {
+    if (strForReverse === '') {
+      return '';
+    }
+
+    return stringReverse(strForReverse.substr(1)) + strForReverse[0];
+  }
+
+  const reverseClearString = stringReverse(clearString);
+
+  function stringComparison(str1, str2) {
+    if (str1.length !== str2.length) {
+      return false;
+    }
+
+    return [...str1].every((symbol, symbolIndex) =>
+      symbol === [...str2][symbolIndex]);
+  }
+
+  return stringComparison(reverseClearString, clearString);
 }
 
 module.exports = isPalindrome;
