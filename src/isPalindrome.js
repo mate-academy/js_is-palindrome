@@ -19,7 +19,15 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const symbolStr = str.toLowerCase().replace(/[',-;/. ]/ig, '');
+  const middleLength = Math.ceil(symbolStr.length / 2);
+  for (let i = 0; i < middleLength; i++) {
+    if (symbolStr[i] !== symbolStr[symbolStr.length - (i + 1)]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = isPalindrome;
