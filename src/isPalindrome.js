@@ -20,6 +20,8 @@
  */
 function isPalindrome(str) {
   // write code here
+  const concatCharOfStr = str.toLocaleLowerCase().replace(/\W/g, '');
+  return concatCharOfStr === concatCharOfStr.split('').reverse().join('');
 }
 
 module.exports = isPalindrome;
