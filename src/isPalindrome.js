@@ -18,8 +18,25 @@
  *
  * @return {boolean}
  */
+
 function isPalindrome(str) {
-  // write code here
+  let transformReverse;
+  let transformExemple;
+
+  if (!str.length) {
+    return true;
+  }
+
+  transformReverse = str.toLowerCase()
+    .match(/\w/g)
+    .reverse()
+    .join('');
+
+  transformExemple = str.toLowerCase()
+    .match(/\w/g)
+    .join('');
+
+  return transformExemple === transformReverse;
 }
 
 module.exports = isPalindrome;
