@@ -23,35 +23,20 @@ function isPalindrome(str) {
     return true;
   }
 
-  function stringClearing(strForClear) {
-    return strForClear
-      .toLowerCase()
-      .match(/\w/g)
-      .join('');
-  }
+  const clearStr = str
+    .toLowerCase()
+    .match(/\w/g)
+    .join('');
 
-  const clearString = stringClearing(str);
+  const clearStrReverse = str
+    .toLowerCase()
+    .match(/\w/g)
+    .reverse()
+    .join('');
 
-  function stringReverse(strForReverse) {
-    if (strForReverse === '') {
-      return '';
-    }
+  const stringComparison = (clearStr === clearStrReverse);
 
-    return stringReverse(strForReverse.substr(1)) + strForReverse[0];
-  }
-
-  const reverseClearString = stringReverse(clearString);
-
-  function stringComparison(str1, str2) {
-    if (str1.length !== str2.length) {
-      return false;
-    }
-
-    return [...str1].every((symbol, symbolIndex) =>
-      symbol === [...str2][symbolIndex]);
-  }
-
-  return stringComparison(reverseClearString, clearString);
+  return stringComparison;
 }
 
 module.exports = isPalindrome;
