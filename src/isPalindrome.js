@@ -22,14 +22,12 @@ function isPalindrome(str) {
   if (str.length === 0) {
     return true;
   }
-  const givenString = str.toLowerCase().match(/[a-z]/g);
-  const reverceString = str.toLowerCase().match(/[a-z]/g).reverse();
-  for (let i = 0; i < str.length; i++) {
-    if (givenString[i] !== reverceString[i]) {
-      return false;
-    }
+  const givenString = str.toLowerCase().match(/[a-z]/g).join('');
+  const reverceString = str.toLowerCase().match(/[a-z]/g).reverse().join('');
+  if (givenString === reverceString) {
+    return true;
   }
-  return true;
+  return false;
 }
 
 module.exports = isPalindrome;
