@@ -19,7 +19,21 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const onlyCharNumb = str.match(/[0-9a-z]/gi);
+
+  if (onlyCharNumb === null) {
+    return true;
+  }
+
+  const joinedStr = onlyCharNumb.join(' ').toLocaleLowerCase();
+
+  for (let i = 0; i < joinedStr.length / 2; i++) {
+    if (joinedStr[i] !== joinedStr[joinedStr.length - 1 - i]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = isPalindrome;
