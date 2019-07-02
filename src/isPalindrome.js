@@ -20,6 +20,8 @@
  */
 function isPalindrome(str) {
   // write code here
+  let wordsString = str.toLowerCase().replace(/[^\w]/g, '');
+  return wordsString === wordsString.split('').reverse().join('');
 }
 
 module.exports = isPalindrome;
