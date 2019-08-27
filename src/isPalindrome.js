@@ -19,8 +19,8 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const pattSplitWord = /\W+/;
-  const stringLetters = str.split(pattSplitWord).join('').toLowerCase();
+  const patternSplitWord = /\W+/;
+  const stringLetters = str.split(patternSplitWord).join('').toLowerCase();
 
   return stringLetters === stringLetters.split('').reverse().join('');
 }
