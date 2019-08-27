@@ -20,6 +20,13 @@
  */
 function isPalindrome(str) {
   // write code here
+  const forwardString = str.toLowerCase().replace(/\W/g, '');
+  const reverseString = forwardString.split('').reverse().join('');
+  if (forwardString === reverseString) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = isPalindrome;
