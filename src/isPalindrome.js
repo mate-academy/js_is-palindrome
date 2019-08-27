@@ -25,6 +25,7 @@ function isPalindrome(str) {
     .split('')
     .reverse()
     .join('');
+
   return reverseStr === str.toLowerCase().replace(/\W/g, '');
 }
 
