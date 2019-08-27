@@ -27,11 +27,7 @@ function isPalindrome(str) {
     .reverse()
     .join('');
 
-  if (reverseReplacedStr === replacedStr) {
-    return true;
-  }
-
-  return false;
+  return reverseReplacedStr === replacedStr;
 }
 
 module.exports = isPalindrome;
