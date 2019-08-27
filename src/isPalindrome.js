@@ -6,7 +6,7 @@
  * A palindrome is a word, phrase, or other sequence of characters which reads
  * the same backward as forward, such as 'madam' or 'racecar'
  *
- * Given a string, determine if it is a palindrome, considering only
+ * Given a string, determine if it is a pal indrome, considering only
  * alphanumeric characters and ignoring cases. Empty string is a valid
  * palindrome.
  *
@@ -20,6 +20,8 @@
  */
 function isPalindrome(str) {
   // write code here
+  const clearStr = str.match(/[A-Za-z]/g).join('').toLowerCase();
+  const revertStr = clearStr.split('').reverse().join('');
+  return clearStr === revertStr;
 }
-
 module.exports = isPalindrome;
