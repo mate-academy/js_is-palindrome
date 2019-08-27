@@ -20,11 +20,7 @@
  */
 function isPalindrome(str) {
   const strWithoutSumbol = str.toLowerCase().replace(/[^a-zA-Z1-9]/g, '');
-  const reversString = [...strWithoutSumbol].reverse().join('');
-  if (strWithoutSumbol === reversString) {
-    return true;
-  }
-  return false;
+  return [...strWithoutSumbol].reverse().join('') === strWithoutSumbol;
 }
 
 module.exports = isPalindrome;
