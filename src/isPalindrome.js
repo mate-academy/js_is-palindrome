@@ -20,10 +20,12 @@
  */
 function isPalindrome(str) {
   // write code here
-  if (str === '') { return true; }
-  const clearStr = str.match(/[A-Za-z]/g).join('').toLowerCase();
-  const revertStr = clearStr.split('').reverse().join('');
+  if (str === '') {
+    return true;
+  }
+  const clearedStr = str.match(/[A-Za-z]/g).join('').toLowerCase();
+  const revertStr = clearedStr.split('').reverse().join('');
 
-  return clearStr === revertStr;
+  return clearedStr === revertStr;
 }
 module.exports = isPalindrome;
