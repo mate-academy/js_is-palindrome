@@ -19,7 +19,10 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const splitStr = str.split(/[^a-z]/gi).join('').toUpperCase();
+  const regExp = new RegExp(splitStr.split('').reverse().join(''));
+
+  return !!splitStr.match(regExp);
 }
 
 module.exports = isPalindrome;
