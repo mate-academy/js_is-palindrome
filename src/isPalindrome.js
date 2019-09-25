@@ -41,5 +41,3 @@ function isPalindrome(str) {
 }
 
 module.exports = isPalindrome;
-
-isPalindrome('A man, a plan, a canal: Panama');
