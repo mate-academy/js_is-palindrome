@@ -19,7 +19,27 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  if (str === '') {
+    return true;
+  }
+
+  const fixStr = /[A-Za-z]/g;
+  const splittedStr = str.toLowerCase().match(fixStr);
+  let counter = 0;
+
+  if (!splittedStr) {
+    return false;
+  }
+
+  for (let i = 0; i < splittedStr.length; i++) {
+    if (splittedStr[i] === splittedStr[splittedStr.length - i - 1]) {
+      counter++;
+    }
+  }
+
+  return splittedStr.length === counter;
 }
 
 module.exports = isPalindrome;
+
+isPalindrome('A man, a plan, a canal: Panama');
