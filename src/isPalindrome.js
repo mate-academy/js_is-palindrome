@@ -19,7 +19,7 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  return str.toUpperCase().replace(/\W/g, '') === str.replace(/\W/g, '').toUpperCase().split('').reverse().join('');
 }
 
 module.exports = isPalindrome;
