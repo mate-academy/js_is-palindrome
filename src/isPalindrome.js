@@ -22,7 +22,7 @@ function isPalindrome(str) {
   if (!str) {
     return true;
   }
-  const clearedText = str.match(/[^:' ,-?]/g).join('').toLocaleLowerCase();
+  const clearedText = str.match(/[^:' ,-?]/g).join('').toLowerCase();
   const palindrom = clearedText.split('').reverse().join('');
 
   return clearedText === palindrom;
