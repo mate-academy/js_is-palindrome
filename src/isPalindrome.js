@@ -19,7 +19,20 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+
+  const strOfLetters = str.toLowerCase().replace(/[\s.,-:`'&!@#$%^&*()_+=-]/g, '');
+  const strFirstWord = strOfLetters.slice(0, (strOfLetters.length / 2));
+  const strSecondtWord = strOfLetters.slice(Math.ceil(strOfLetters.length / 2));
+
+
+  if (strFirstWord.split("").reverse().join("") === strSecondtWord) {
+    return true;
+  }
+
+  return false;
 }
+
+
+
 
 module.exports = isPalindrome;
