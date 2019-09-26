@@ -22,10 +22,8 @@ function isPalindrome(str) {
   if (str.length === 0) {
     return true;
   }
-  const strOnlyLetter = str.toLowerCase().match(/\w+/gi).join('');
-  const strOnlyLetterReverse
-        = str.toLowerCase().match(/\w/gi).reverse().join('');
-  return (strOnlyLetter === strOnlyLetterReverse);
+  const strOnlyLetter = str.toLowerCase().match(/\w/gi).join('');
+  return (strOnlyLetter.split('').reverse().join('') === strOnlyLetter);
 }
 
 module.exports = isPalindrome;
