@@ -19,15 +19,14 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  let letter = '';
-  for (let i = 0; i < str.length; i++) {
-    if (str[i].match(/[A-Z]/i)) {
-      letter += str[i].toLowerCase();
-    }
+  if (str.length === 0) {
+    return true;
   }
+  const pattern = /[A-Z]/ig;
+  const letter = str.match(pattern).join('').toLowerCase();
   const letterLength = letter.length;
 
-  for (let i = 0; i < (letter.length) / 2; i++) {
+  for (let i = 0; i < (letterLength) / 2; i++) {
     if (letter[i] !== letter[letterLength - i - 1]) {
       return false;
     }
