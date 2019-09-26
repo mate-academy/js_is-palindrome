@@ -22,9 +22,9 @@ function isPalindrome(str) {
   if (str === '') {
     return true;
   }
-  const normalizedString = str.toLowerCase().match(/\w/g).join('');
-  const reversedNormString = str.toLowerCase().match(/\w/g).reverse().join('');
-  return normalizedString === reversedNormString;
+  const normalStr = str.toLowerCase().match(/\w/g).join('');
+  const reversedNormStr = normalStr.split('').reverse().join('');
+  return normalStr === reversedNormStr;
 }
 
 module.exports = isPalindrome;
