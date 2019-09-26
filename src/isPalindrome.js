@@ -19,7 +19,7 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  let normalizedStr = str.replace(/\W+/g, '');
+  let normalizedStr = str.replace(/\W+/g, '').toUpperCase();
   normalizedStr = normalizedStr.toUpperCase();
   return normalizedStr.split('').reverse().join('') === normalizedStr;
 }
