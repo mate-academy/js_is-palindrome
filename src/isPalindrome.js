@@ -20,12 +20,9 @@
  */
 function isPalindrome(str) {
 
-  const strOfLetters = str.toLowerCase().replace(/[\s.,-:`'&!@#$%^&*()_+=-]/g, '');
-  const strFirstWord = strOfLetters.slice(0, (strOfLetters.length / 2));
-  const strSecondtWord = strOfLetters.slice(Math.ceil(strOfLetters.length / 2));
+  const strOfLetters = str.toLowerCase().replace(/\W/g, '');
 
-
-  if (strFirstWord.split("").reverse().join("") === strSecondtWord) {
+  if (strOfLetters.split("").reverse().join("") === strOfLetters) {
     return true;
   }
 
