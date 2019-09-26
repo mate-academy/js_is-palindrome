@@ -25,13 +25,9 @@ function isPalindrome(str) {
   }
   const reg1 = /\w/g;
   const smallStr = str.toLowerCase().match(reg1).join('');
-  const revStr = str.toLowerCase().match(reg1).reverse().join('');
+  const revStr = smallStr.split('').reverse().join('');
 
-  if (smallStr === revStr) {
-    return true;
-  }
-
-  return false;
+  return smallStr === revStr;
 }
 
 module.exports = isPalindrome;
