@@ -22,8 +22,8 @@ function isPalindrome(str) {
   if (str === '') {
     return true;
   }
-  const palindrome = str.toUpperCase().match(/\w/ig).reverse('').join('');
-  const newStr = str.toUpperCase().match(/\w/ig).join('');
+  const newStr = str.toLowerCase().replace(/\W/ig, '');
+  const palindrome = newStr.split('').reverse('').join('');
   return palindrome === newStr;
 }
 
