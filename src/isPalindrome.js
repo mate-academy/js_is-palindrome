@@ -23,9 +23,7 @@ function isPalindrome(str) {
     return true;
   }
   const findLetters = str.toUpperCase().match(/\w/gi).join('');
-  const reverseLetters = findLetters.match(/\w/gi)
-    .reverse('')
-    .join('');
+  const reverseLetters = findLetters.split('').reverse('').join('');
   return findLetters === reverseLetters;
 }
 
