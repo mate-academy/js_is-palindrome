@@ -22,11 +22,11 @@ function isPalindrome(str) {
   if (str === '') {
     return true;
   }
-  const findletters = str.toUpperCase().match(/\w/gi).join('');
-  const reverseLetters = findletters.toUpperCase().match(/\w/gi)
+  const findLetters = str.toUpperCase().match(/\w/gi).join('');
+  const reverseLetters = findLetters.match(/\w/gi)
     .reverse('')
     .join('');
-  return findletters === reverseLetters;
+  return findLetters === reverseLetters;
 }
 
 module.exports = isPalindrome;
