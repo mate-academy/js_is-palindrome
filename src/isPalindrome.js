@@ -21,9 +21,8 @@
 function isPalindrome(str) {
   const normalizeString = str.toLowerCase().replace(/[^a-zA-Z]/g, '');
   const reverse = [...normalizeString].reverse().join('');
-  const origin = [...normalizeString].join('');
 
-  return reverse === origin;
+  return reverse === normalizeString;
 }
 
 module.exports = isPalindrome;
