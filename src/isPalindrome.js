@@ -19,7 +19,14 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  if (str === '') {
+    return true;
+  }
+  const strCharacters = str.match(/[a-zA-Z]/g).join('');
+  const regexpForTest = new RegExp(`${strCharacters
+    .split('').reverse().join('')}`, 'i');
+  const regexpForTest2 = new RegExp(`${strCharacters}`, 'i');
+  return regexpForTest2.test(regexpForTest);
 }
 
 module.exports = isPalindrome;
