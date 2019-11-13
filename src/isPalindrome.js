@@ -20,6 +20,7 @@
  */
 function isPalindrome(str) {
   const normalizedStr = str.replace(/[^a-zA-Z ]|\s/g, '').toLowerCase();
+
   return (normalizedStr === normalizedStr.split('').reverse().join(''));
 }
 
