@@ -22,11 +22,9 @@ function isPalindrome(str) {
   if (str === '') {
     return true;
   }
-  const strCharacters = str.match(/[a-zA-Z]/g).join('');
-  const regexpForTest = new RegExp(`${strCharacters
-    .split('').reverse().join('')}`, 'i');
-  const regexpForTest2 = new RegExp(`${strCharacters}`, 'i');
-  return regexpForTest2.test(regexpForTest);
+  const strCharacters = str.match(/[a-zA-Z]/g).join('').toLowerCase();
+  const strReversed = strCharacters.split('').reverse().join('');
+  return strCharacters === strReversed;
 }
 
 module.exports = isPalindrome;
