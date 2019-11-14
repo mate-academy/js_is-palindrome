@@ -22,11 +22,8 @@ function isPalindrome(str) {
   if (str === '') {
     return true;
   }
-  const onlyChars = str.match(/\w/g).join('').toLowerCase();
-  const halfIndex = Math.trunc(onlyChars.length / 2);
-  const firsHalf = onlyChars.slice(0, halfIndex);
-  const secondHalf = onlyChars.slice(onlyChars.length - halfIndex);
-  return firsHalf === secondHalf.split('').reverse().join('');
+  const onlyChars = str.match(/\w/g).join('').toLowerCase().split('');
+  return onlyChars.join('') === onlyChars.reverse().join('');
 }
 
 module.exports = isPalindrome;
