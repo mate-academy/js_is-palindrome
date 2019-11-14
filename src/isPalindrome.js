@@ -19,15 +19,10 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const purifiedStr = str.toLowerCase().replace(/[^\w]/g, '');
-  const middleIndex = purifiedStr.length / 2;
-  const firstHalfStr = purifiedStr.slice(0, middleIndex);
-  const secondHalfStr = purifiedStr.slice(-middleIndex)
-    .split('')
-    .reverse()
-    .join('')
+  const normalizedStr = str.toLowerCase().replace(/[^\w]/g, '');
+  const reversedStr = normalizedStr.split('').reverse().join('');
 
-  return (firstHalfStr === secondHalfStr) ? true : false;
+  return normalizedStr === reversedStr
 }
 
 module.exports = isPalindrome;
