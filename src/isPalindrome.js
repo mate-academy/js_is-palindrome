@@ -19,7 +19,20 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  if (!str) {
+    return true;
+  }
+
+  const readyStr = str.toLocaleLowerCase().match(/[a-zA-Z]/g).join('');
+  const count = Math.floor(readyStr.length / 2);
+
+  for (let i = 0; i < count; ++i) {
+    if (readyStr[i] !== readyStr[readyStr.length - 1 - i]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = isPalindrome;
