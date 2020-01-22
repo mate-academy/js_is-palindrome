@@ -19,7 +19,15 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  if (str === '') {
+    return true;
+  }
+
+  const strMatch = str.match(/[a-z]/gi).join('');
+  const pattern = strMatch.split('').reverse().join('');
+  const re = new RegExp(pattern, 'gi');
+
+  return re.test(strMatch);
 }
 
 module.exports = isPalindrome;
