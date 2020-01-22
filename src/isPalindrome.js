@@ -25,14 +25,10 @@ function isPalindrome(str) {
 
   const pattern = /\w+/g;
 
-  const strOfSymbols = str.match(pattern).join('').toLowerCase();
-  const reverseStrOfSymbols = strOfSymbols.split('').reverse().join('');
+  const letters = str.match(pattern).join('').toLowerCase();
+  const reversedLetters = letters.split('').reverse().join('');
 
-  if (strOfSymbols === reverseStrOfSymbols) {
-    return true;
-  } else {
-    return false;
-  }
+  return letters === reversedLetters;
 }
 
 module.exports = isPalindrome;
