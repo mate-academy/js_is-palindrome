@@ -23,8 +23,7 @@ function isPalindrome(str) {
     return true;
   }
 
-  const regexp = /\w/g;
-  const phrase = str.match(regexp).join('').toLowerCase();
+  const phrase = str.replace(/\W/g, '').toLowerCase();
   const reversePhrase = phrase.split('').reverse().join('');
 
   return (phrase === reversePhrase);
