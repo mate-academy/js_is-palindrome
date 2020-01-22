@@ -23,10 +23,10 @@ function isPalindrome(str) {
     return true;
   }
 
-  const strMatch = str.match(/[a-z]/gi).join('');
-  const strMatchReverse = strMatch.split('').reverse().join('');
+  const matches = str.match(/[a-z]/gi).join('');
+  const reversedString = matches.split('').reverse().join('');
 
-  return strMatch.toLowerCase() === strMatchReverse.toLowerCase();
+  return matches.toLowerCase() === reversedString.toLowerCase();
 }
 
 module.exports = isPalindrome;
