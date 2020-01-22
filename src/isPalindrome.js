@@ -25,12 +25,12 @@ function isPalindrome(str) {
 
   const pattern = /[a-z]+/gi;
 
-  const stringArr = str.match(pattern);
+  const matches = str.match(pattern);
 
-  const onlyLetterString = stringArr.join('').toUpperCase();
-  const onlyLetterStringReverse = onlyLetterString.split('').reverse().join('');
+  const string = matches.join('').toUpperCase();
+  const reversed = string.split('').reverse().join('');
 
-  if (onlyLetterString === onlyLetterStringReverse) {
+  if (string === reversed) {
     return true;
   }
 
