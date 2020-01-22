@@ -23,17 +23,10 @@ function isPalindrome(str) {
     return true;
   }
 
-  const string = str.toLowerCase().match(/\w/gi);
-  const reversedString = [...string].reverse();
-  let count = 0;
+  const string = str.toLowerCase().match(/\w/gi).join('');
+  const reversedString = [...string].reverse().join('');
 
-  for (let i = 0; i < string.length; i++) {
-    if (string[i] === reversedString[i]) {
-      count += 1;
-    }
-  }
-
-  return count === string.length;
+  return string === reversedString;
 }
 
 module.exports = isPalindrome;
