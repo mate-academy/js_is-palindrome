@@ -24,10 +24,9 @@ function isPalindrome(str) {
   }
 
   const strMatch = str.match(/[a-z]/gi).join('');
-  const pattern = strMatch.split('').reverse().join('');
-  const re = new RegExp(pattern, 'gi');
+  const strMatchReverse = strMatch.split('').reverse().join('');
 
-  return re.test(strMatch);
+  return strMatch.toLowerCase() === strMatchReverse.toLowerCase();
 }
 
 module.exports = isPalindrome;
