@@ -26,13 +26,9 @@ function isPalindrome(str) {
   const stringLowerCase = str.toLowerCase();
   const pattern = stringLowerCase.match(/\w/g);
   const string = pattern.join('');
-  const stringReversed = pattern.reverse().join('');
+  const reversedString = pattern.reverse().join('');
 
-  if (string === stringReversed) {
-    return true;
-  } else {
-    return false;
-  }
+  return string === reversedString;
 }
 
 module.exports = isPalindrome;
