@@ -22,7 +22,7 @@ function isPalindrome(str) {
   const word = str.replace(/[\W_]/g, '').toLowerCase();
   const reversWord = word.split('').reverse().join('');
 
-  return (word === reversWord);
+  return word === reversWord;
 }
 
 module.exports = isPalindrome;
