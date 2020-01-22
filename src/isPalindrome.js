@@ -30,11 +30,7 @@ function isPalindrome(str) {
   const string = matches.join('').toUpperCase();
   const reversed = string.split('').reverse().join('');
 
-  if (string === reversed) {
-    return true;
-  }
-
-  return false;
+  return string === reversed;
 }
 
 module.exports = isPalindrome;
