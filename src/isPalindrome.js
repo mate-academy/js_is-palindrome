@@ -24,10 +24,11 @@ function isPalindrome(str) {
     return true;
   }
 
-  const pattern = /\w+/gi;
-  const matches = str.toLowerCase().match(pattern);
+  const pattern = /[^\w]+/gi;
+  const replacedStr = str.toLowerCase().replace(pattern, '');
+  const reverseStr = replacedStr.split('').reverse().join('');
 
-  return matches.join('') === matches.join('').split('').reverse().join('');
+  return reverseStr === replacedStr;
 }
 
 module.exports = isPalindrome;
