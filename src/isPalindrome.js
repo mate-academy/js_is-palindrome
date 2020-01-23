@@ -23,10 +23,9 @@ function isPalindrome(str) {
     return true;
   }
 
-  const stringLowerCase = str.toLowerCase();
-  const pattern = stringLowerCase.match(/\w/g);
-  const string = pattern.join('');
-  const reversedString = pattern.reverse().join('');
+  const matches = str.toLowerCase().match(/\w/g);
+  const string = matches.join('');
+  const reversedString = matches.reverse().join('');
 
   return string === reversedString;
 }
