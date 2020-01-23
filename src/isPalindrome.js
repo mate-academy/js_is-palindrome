@@ -24,9 +24,9 @@ function isPalindrome(str) {
   }
 
   const string = str.toLowerCase().match(/\w/gi).join('');
-  const revString = [...string].reverse().join('');
+  const reversedString = [...string].reverse().join('');
 
-  return string === revString;
+  return string === reversedString;
 }
 
 module.exports = isPalindrome;
