@@ -20,15 +20,14 @@
  */
 
 function isPalindrome(str) {
-  const string = str.toLowerCase();
-  const pattern = /\w+/gi;
-  const answer = string.match(pattern);
-
-  if (answer == null) {
+  if (str === '') {
     return true;
   }
 
-  return answer.join('') === answer.join('').split('').reverse().join('');
+  const pattern = /\w+/gi;
+  const matches = str.toLowerCase().match(pattern);
+
+  return matches.join('') === matches.join('').split('').reverse().join('');
 }
 
 module.exports = isPalindrome;
