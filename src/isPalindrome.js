@@ -24,22 +24,10 @@ function isPalindrome(str) {
   }
 
   const pattern = /\w/g;
-  const textModifed = str.toLowerCase().match(pattern);
-  const textModifedLength = textModifed.length;
-  const textModifedRight = textModifed.splice(Math.ceil(textModifedLength / 2));
-  let textModifedLeft = '';
+  const word = str.match(pattern).join('').toLowerCase();
+  const reverseWord = word.split('').reverse().join('');
 
-  if (textModifedLength % 2 !== 0) {
-    textModifed.splice(-1, 1);
-  }
-
-  textModifedLeft = textModifed;
-
-  const resLeft = textModifedLeft.join('');
-  const resRight = textModifedRight.reverse().join('');
-  const checkPalindrome = resLeft === resRight;
-
-  return checkPalindrome;
+  return word === reverseWord;
 }
 
 module.exports = isPalindrome;
