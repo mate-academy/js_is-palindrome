@@ -19,7 +19,23 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const abc = 'abcdefjhijklmnopqrstuvwxyz';
+  const arr = [];
+  const arr2 = [];
+  let res = false;
+
+  for (let i = 0; i < str.length; i++) {
+    if (abc.includes(str[i].toLowerCase())) {
+      arr.push(str[i].toLowerCase());
+      arr2.unshift(str[i].toLowerCase());
+    }
+  }
+
+  if (arr.join() === arr2.join()) {
+    res = true;
+  }
+
+  return res;
 }
 
 module.exports = isPalindrome;
