@@ -19,7 +19,9 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const cleanString = str.toLowerCase().replace(/[\W_]/g, '');
+
+  return cleanString.split('').reverse().join('') === cleanString;
 }
 
 module.exports = isPalindrome;
