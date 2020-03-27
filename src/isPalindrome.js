@@ -19,7 +19,21 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  if (str.length === 0) {
+    return true;
+  }
+
+  const lowerCase = str.toLowerCase();
+  const withoutPunMark = lowerCase.match(/([A-Za-z])/g);
+  const center = Math.floor(withoutPunMark.length / 2);
+
+  for (let i = 0; i <= center; i++) {
+    if (withoutPunMark[i] !== withoutPunMark[withoutPunMark.length - i - 1]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = isPalindrome;
