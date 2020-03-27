@@ -20,6 +20,20 @@
  */
 function isPalindrome(str) {
   // write code here
+
+  const regExr = /\W/g;
+
+  const onlyLetters = str.replace(regExr, '').toLowerCase();
+  let reverseStr = '';
+
+  // or reverseStr = onlyLetters.split('').reverse().join('')
+  let i = onlyLetters.length - 1;
+
+  for (i; i >= 0; i--) {
+    reverseStr += onlyLetters[i];
+  }
+
+  return onlyLetters === reverseStr;
 }
 
 module.exports = isPalindrome;
