@@ -20,6 +20,12 @@
  */
 function isPalindrome(str) {
   // write code here
+  let string = str.toUpperCase()
+    .replace(/[^A-Z]/g, "");
+  let stringReverse = string.split("")
+    .reverse()
+    .join("");
+  return string === stringReverse;
 }
 
 module.exports = isPalindrome;
