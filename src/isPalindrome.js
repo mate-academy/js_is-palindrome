@@ -20,17 +20,15 @@
  */
 function isPalindrome(str) {
   const letters = [];
-  const reversedLetters = [];
 
   for (const char of str) {
     if (char.match(/[a-z]/i) !== null) {
       letters.push(char.toLowerCase());
-      reversedLetters.unshift(char.toLowerCase());
     }
   }
 
   for (let i = 0; i < letters.length; i++) {
-    if (letters[i] !== reversedLetters[i]) {
+    if (letters[i] !== letters[letters.length - 1 - i]) {
       return false;
     }
   }
