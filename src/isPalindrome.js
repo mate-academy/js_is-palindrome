@@ -19,7 +19,9 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
-}
+  return str.replace(/[^a-zA-Z]/g, '')
+    .toLowerCase() === str.replace(/[^a-zA-Z]/g, '')
+    .toLowerCase().split('').reverse().join('');
+};
 
 module.exports = isPalindrome;
