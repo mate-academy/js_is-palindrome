@@ -31,3 +31,8 @@ test('Empty string', () => {
   expect(isPalindrome(''))
     .toBe(true);
 });
+
+test('A man, a plan, a canal_ Panama', () => {
+  expect(isPalindrome('A man, a plan, a canal_ Panama'))
+    .toBe(true);
+});
