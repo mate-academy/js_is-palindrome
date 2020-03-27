@@ -19,7 +19,17 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const symbolsList = /[-:']/g;
+
+  if (str === '') {
+    return true;
+  }
+
+  if (!str.match(symbolsList)) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 module.exports = isPalindrome;
