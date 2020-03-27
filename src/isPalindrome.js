@@ -19,23 +19,26 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const abc = 'abcdefjhijklmnopqrstuvwxyz';
-  const arr = [];
-  const arr2 = [];
-  let res = false;
+  let palindrome = false;
 
-  for (let i = 0; i < str.length; i++) {
-    if (abc.includes(str[i].toLowerCase())) {
-      arr.push(str[i].toLowerCase());
-      arr2.unshift(str[i].toLowerCase());
+  if (str.length === 0) {
+    palindrome = true;
+  } else {
+    const normalizeStr = str.toLowerCase().match(/[a-z]/g);
+    let counter = 0;
+
+    for (let i = 0; i < normalizeStr.length; i++) {
+      if (normalizeStr[i] === normalizeStr[normalizeStr.length - 1 - i]) {
+        counter++;
+      }
+    }
+
+    if (normalizeStr.length === counter) {
+      palindrome = true;
     }
   }
 
-  if (arr.join() === arr2.join()) {
-    res = true;
-  }
-
-  return res;
+  return palindrome;
 }
 
 module.exports = isPalindrome;
