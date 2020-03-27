@@ -19,7 +19,13 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const newStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+  if (newStr === newStr.split('').reverse().join('')) {
+    return true;
+  }
+
+  return false;
 }
 
 module.exports = isPalindrome;
