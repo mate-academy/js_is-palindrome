@@ -19,17 +19,11 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const symbolsList = /[-:']/g;
+  const string = str.replace(/[^A-Za-zА]/g, '').toLowerCase();
 
-  if (str === '') {
-    return true;
-  }
+  /* console.log(string === string.split('').reverse().join('')); */
 
-  if (!str.match(symbolsList)) {
-    return false;
-  } else {
-    return true;
-  }
+  return string === string.split('').reverse().join('');
 }
 
 module.exports = isPalindrome;
