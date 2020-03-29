@@ -19,17 +19,10 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const arr = str.split('');
+  const str1 = str.replace(/[,-: ']/g, '');
 
-  for (let i = 0; i < arr.length; i++) {
-    if (", '-:".includes(arr[i])) {
-      arr.splice(i, 1);
-      i--;
-    }
-  }
-
-  for (let i = 0; i < Math.floor(arr.length / 2); i++) {
-    if (arr[i].toUpperCase() !== arr[arr.length - 1 - i].toUpperCase()) {
+  for (let i = 0; i < Math.floor(str1.length / 2); i++) {
+    if (str1[i].toUpperCase() !== str1[str1.length - 1 - i].toUpperCase()) {
       return false;
     }
   }
