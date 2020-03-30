@@ -19,9 +19,9 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  return str.toLowerCase().replace(/[\s,._?!':-]/g, '').split('').reverse().join('')
-         === str.toLowerCase().replace(/[\s,._?!':-]/g, '')
-         ? true : false;
+  let regex = /[\s,._?!':-]/g;
+  str = str.toLowerCase().replace(regex, '');
+  return str.split('').reverse().join('') === str ? true : false;
 }
 
 module.exports = isPalindrome;
