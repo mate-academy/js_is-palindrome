@@ -19,9 +19,9 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const newStr = str.replace(/[\W]/g, '').toLowerCase().split('');
+  const normalizedString = str.replace(/[\W]/g, '').toLowerCase().split('');
 
-  if (newStr.join('') === newStr.reverse().join('')) {
+  if (normalizedString.join('') === normalizedString.reverse().join('')) {
     return true;
   }
 
