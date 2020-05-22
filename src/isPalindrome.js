@@ -20,6 +20,20 @@
  */
 function isPalindrome(str) {
   // write code here
+  const string = str.toLowerCase();
+
+  const symbols = /[^A-Za-z0-9]/gi;
+  const strg = string.replace(symbols, '');
+
+  const reversestrgArr = strg.split('');
+
+  const reversestrg = reversestrgArr.reverse().join('');
+
+  if (strg === reversestrg) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = isPalindrome;
