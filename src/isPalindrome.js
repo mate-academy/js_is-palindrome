@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Implement isPalindrome function:
@@ -19,7 +19,10 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  return (
+    str.toLowerCase().replace(/\W/g, "") ===
+    str.toLowerCase().replace(/\W/g, "").split("").reverse().join("")
+  );
 }
 
 module.exports = isPalindrome;
