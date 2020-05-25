@@ -19,7 +19,18 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const ignoreSymbols = /[`~!@#$%^&*( )_|+\-=?;:'",.<>]/g;
+
+  const notReverse = str
+    .replace(ignoreSymbols, '')
+    .toLowerCase();
+
+  const reverse = notReverse
+    .split('')
+    .reverse()
+    .join('');
+
+  return (notReverse === reverse);
 }
 
 module.exports = isPalindrome;
