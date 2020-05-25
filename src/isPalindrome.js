@@ -19,7 +19,7 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const cache = str.replace(/[-/.',:!?;' ']*/g, '').toLowerCase();
+  const cache = str.replace(/[\W ' ']/g, '').toLowerCase();
   const reverse = cache.split('').reverse().join('');
 
   if (cache === reverse) {
