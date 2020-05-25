@@ -19,7 +19,10 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const replaceStr = str.replace(/\W/g, '').toLowerCase();
+  const palindromeStr = replaceStr.split('').reverse().join('');
+
+  return replaceStr === palindromeStr;
 }
 
 module.exports = isPalindrome;
