@@ -24,14 +24,13 @@ function isPalindrome(str) {
   }
 
   const pattern = /\w+/g;
+  let strLetter = str.toLowerCase().match(pattern);
 
-  let strLetter = str.match(pattern);
+  strLetter = strLetter.join('');
 
-  strLetter = strLetter.map(el => el.toLowerCase()).join('');
+  const reversedLetter = strLetter.split('').reverse().join('');
 
-  const strReverseLetter = strLetter.split('').reverse().join('');
-
-  return strLetter === strReverseLetter;
+  return strLetter === reversedLetter;
 }
 
 module.exports = isPalindrome;
