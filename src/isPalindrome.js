@@ -22,11 +22,7 @@ function isPalindrome(str) {
   const smallLetters = /[^a-z]/g;
   const cleanStr = str.toLowerCase().replace(smallLetters, '');
 
-  if (cleanStr === cleanStr.split('').reverse().join('')) {
-    return true;
-  }
-
-  return false;
+  return cleanStr === cleanStr.split('').reverse().join('');
 }
 
 module.exports = isPalindrome;
