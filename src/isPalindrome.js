@@ -19,16 +19,10 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const strToLower = str.toLowerCase();
-  const regexpOnlyLetter = /[a-z]/g;
-  const strOnlyLettersArray = strToLower.match(regexpOnlyLetter);
-  const strOnlyLetters = str.length > 0
-    ? strOnlyLettersArray.join('')
-    : undefined;
+  const modifiedString = str.replace(/[^A-Z]/gi, '').toLowerCase();
+  const reversedString = modifiedString.split('').reverse('').join('');
 
-  return str.length > 0
-    ? strOnlyLettersArray.reverse().join('') === strOnlyLetters
-    : str.length === 0;
+  return modifiedString === reversedString;
 }
 
 module.exports = isPalindrome;
