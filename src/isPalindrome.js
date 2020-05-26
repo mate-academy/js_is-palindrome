@@ -25,7 +25,6 @@ function isPalindrome(str) {
 
   const pattern = /\w+/g;
   const strLetter = str.toLowerCase().match(pattern).join('');
-
   const reversedLetter = strLetter.split('').reverse().join('');
 
   return strLetter === reversedLetter;
