@@ -19,12 +19,9 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  if (str === '') {
-    return true;
-  }
-
   const lowerString = str.toLowerCase();
-  const regExpString = lowerString.match(/\w+/gi).join('');
+  const regExp = /\W/g;
+  const regExpString = lowerString.replace(regExp, '');
   const reverseString = regExpString.split('').reverse().join('');
 
   return regExpString === reverseString;
