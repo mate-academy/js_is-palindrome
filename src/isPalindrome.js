@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Implement isPalindrome function:
@@ -19,9 +19,10 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
+  const regReplace = str.toLowerCase().replace(/\W/g, '');
+
   return (
-    str.toLowerCase().replace(/\W/g, "") ===
-    str.toLowerCase().replace(/\W/g, "").split("").reverse().join("")
+    regReplace === regReplace.split('').reverse().join('')
   );
 }
 
