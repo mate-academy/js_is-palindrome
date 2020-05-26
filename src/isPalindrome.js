@@ -20,16 +20,15 @@
  */
 function isPalindrome(str) {
   // write code here
-  const string = str.toLowerCase();
+  let string = str.toLowerCase();
 
   const pattern = /[^A-Za-z0-9]/gi;
-  const strg = string.replace(pattern, '');
 
-  const reversestrgArr = strg.split('');
+  string = string.replace(pattern, '');
 
-  const reversestrg = reversestrgArr.reverse().join('');
+  const reverseString = string.split('').reverse().join('');
 
-  if (strg === reversestrg) {
+  if (string === reverseString) {
     return true;
   } else {
     return false;
