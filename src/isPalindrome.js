@@ -19,7 +19,8 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const cleanStr = str.toLowerCase().replace(/[^a-z]/g, '');
+  const smallLetters = /[^a-z]/g;
+  const cleanStr = str.toLowerCase().replace(smallLetters, '');
 
   if (cleanStr === cleanStr.split('').reverse().join('')) {
     return true;
