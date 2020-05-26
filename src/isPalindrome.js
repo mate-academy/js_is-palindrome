@@ -27,11 +27,7 @@ function isPalindrome(str) {
   const originalString = str.toLowerCase().match(pattern).join('');
   const reversedString = originalString.split('').reverse().join('');
 
-  if (originalString === reversedString) {
-    return true;
-  }
-
-  return false;
+  return originalString === reversedString;
 }
 
 module.exports = isPalindrome;
