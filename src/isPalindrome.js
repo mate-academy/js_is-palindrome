@@ -20,9 +20,9 @@
  */
 function isPalindrome(str) {
   const replacedString = str.replace(/[^\w+]/gi, '').toLowerCase();
-  const reversedString = strNormalise.split('').reverse().join('');
+  const reversedString = replacedString.split('').reverse().join('');
 
-  return reverse === strNormalise;
+  return reversedString === replacedString;
 }
 
 module.exports = isPalindrome;
