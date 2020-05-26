@@ -21,9 +21,9 @@
 function isPalindrome(str) {
   const regularExpression = /\W/g;
   const stringLowerCase = str.toLowerCase().replace(regularExpression, '');
-  const stringReverse = stringLowerCase.split('').reverse().join('');
+  const stringReversed = stringLowerCase.split('').reverse().join('');
 
-  return stringReverse === stringLowerCase;
+  return stringReversed === stringLowerCase;
 }
 
 module.exports = isPalindrome;
