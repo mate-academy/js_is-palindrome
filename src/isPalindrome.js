@@ -22,8 +22,8 @@ function isPalindrome(str) {
   // write code here
   const string = str.toLowerCase();
 
-  const symbols = /[^A-Za-z0-9]/gi;
-  const strg = string.replace(symbols, '');
+  const pattern = /[^A-Za-z0-9]/gi;
+  const strg = string.replace(pattern, '');
 
   const reversestrgArr = strg.split('');
 
