@@ -19,22 +19,22 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  const pattern = /\w/g;
-  const textBreak = str.match(pattern);
+  const pattern = /[^\W_]/g;
+  const text = str.match(pattern);
 
-  if (textBreak === null) {
+  if (text === null) {
     return true;
   };
 
-  const notReverse = textBreak
+  const notReverseText = text
     .join('')
     .toLowerCase();
-  const reverse = textBreak
+  const reverseText = text
     .reverse()
     .join('')
     .toLowerCase();
 
-  return (reverse === notReverse);
+  return (reverseText === notReverseText);
 }
 
 module.exports = isPalindrome;
