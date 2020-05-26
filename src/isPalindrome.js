@@ -20,17 +20,14 @@
  */
 function isPalindrome(str) {
   const pattern = /[^\W_]/g;
-  const text = str.toLowerCase().match(pattern);
+  const matches = str.toLowerCase().match(pattern);
 
-  if (text === null) {
+  if (matches === null) {
     return true;
   };
 
-  const notReversedText = text
-    .join('');
-  const reversedText = text
-    .reverse()
-    .join('');
+  const notReversedText = matches.join('');
+  const reversedText = matches.reverse().join('');
 
   return reversedText === notReversedText;
 }
