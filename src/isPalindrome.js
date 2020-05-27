@@ -6,9 +6,10 @@ function isPalindrome(str) {
   }
 
   const regexp = /\w/g;
+  const stringArray = str.match(regexp);
 
-  const string = str.match(regexp).join('').toLowerCase();
-  const reverseString = str.match(regexp).reverse().join('').toLowerCase();
+  const string = stringArray.join('').toLowerCase();
+  const reverseString = stringArray.reverse().join('').toLowerCase();
 
   return string === reverseString;
 }
