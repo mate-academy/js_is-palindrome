@@ -19,7 +19,20 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  if (str.length === 0) {
+    return true;
+  }
+  const pattern = /[A-Z]/ig;
+  const letter = str.match(pattern).join('').toLowerCase();
+  const letterLength = letter.length;
+
+  for (let i = 0; i < (letterLength) / 2; i++) {
+    if (letter[i] !== letter[letterLength - i - 1]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = isPalindrome;
