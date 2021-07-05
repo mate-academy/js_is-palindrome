@@ -19,7 +19,10 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const str1 = str.replace(/[ .,!@#$%^&*()-=+_"№;:?']/gi, '')
+    .toLocaleLowerCase();
+
+  return str1 === str1.split('').reverse().join('');
 }
 
 module.exports = isPalindrome;
