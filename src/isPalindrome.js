@@ -19,7 +19,24 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  if (str === '') {
+    return true;
+  }
+
+  const strWithoutSym = str.toLowerCase().match(/[a-z]/g);
+  let firstHalf;
+  let secondHalf;
+  const len = strWithoutSym.length;
+
+  if (len % 2 === 0) {
+    firstHalf = strWithoutSym.slice(0, len / 2).join('');
+    secondHalf = strWithoutSym.slice(-(len / 2)).reverse().join('');
+  } else {
+    firstHalf = strWithoutSym.slice(0, (len / 2) - 1).join('');
+    secondHalf = strWithoutSym.slice(-(len / 2) + 1).reverse().join('');
+  }
+
+  return firstHalf === secondHalf;
 }
 
 module.exports = isPalindrome;
