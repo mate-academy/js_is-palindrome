@@ -19,7 +19,22 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  let formattedStr = str.replace(/[0-9&/\\#, =+()_!$~%.'":*?<>{}]/g, '');
+
+  formattedStr = formattedStr.replace(/-/g, '');
+  formattedStr = formattedStr.toLocaleLowerCase();
+
+  let newString = '';
+
+  for (let i = formattedStr.length - 1; i >= 0; i--) {
+    newString += formattedStr[i];
+  }
+
+  if (newString === formattedStr) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = isPalindrome;
