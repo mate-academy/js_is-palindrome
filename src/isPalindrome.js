@@ -19,7 +19,15 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const str1 = str.replace(/[^A-za-z]/g, '');
+
+  for (let i = 0; i < Math.floor(str1.length / 2); i++) {
+    if (str1[i].toUpperCase() !== str1[str1.length - 1 - i].toUpperCase()) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = isPalindrome;
