@@ -1,4 +1,7 @@
 {
+  "jest": {
+   "testEnvironment": "node"
+  },
   "name": "is-palindrome",
   "version": "1.0.0",
   "description": "Palindrome validation",
