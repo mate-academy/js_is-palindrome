@@ -19,7 +19,26 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  let palindrome = false;
+
+  if (str.length === 0) {
+    palindrome = true;
+  } else {
+    const normalizeStr = str.toLowerCase().match(/[a-z]/g);
+    let counter = 0;
+
+    for (let i = 0; i < normalizeStr.length; i++) {
+      if (normalizeStr[i] === normalizeStr[normalizeStr.length - 1 - i]) {
+        counter++;
+      }
+    }
+
+    if (normalizeStr.length === counter) {
+      palindrome = true;
+    }
+  }
+
+  return palindrome;
 }
 
 module.exports = isPalindrome;
