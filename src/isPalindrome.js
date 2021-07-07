@@ -18,8 +18,19 @@
  *
  * @return {boolean}
  */
-function isPalindrome(str) {
-  // write code here
+function isPalindrome(input) {
+  if (input === '') {
+    return true;
+  }
+
+  const str = input.match(/\w+/g).join('').toLowerCase();
+  let reservedStr = '';
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    reservedStr += str[i];
+  }
+
+  return reservedStr === str;
 }
 
 module.exports = isPalindrome;
