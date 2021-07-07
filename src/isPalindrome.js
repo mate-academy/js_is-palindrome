@@ -20,6 +20,18 @@
  */
 function isPalindrome(str) {
   // write code here
+  const arr = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].match(/[a-z]/i)) {
+      arr.push(str[i].toLowerCase());
+    }
+  }
+  for (let i = 0; i < arr.length / 2; i++) {
+    if (arr[i] !== arr[arr.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 module.exports = isPalindrome;
