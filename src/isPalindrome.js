@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * Implement isPalindrome function:
  *
@@ -19,7 +18,12 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
-}
-
+  const reversedStr = str.replace(/[^A-Za-zА-Яа-яЁё]/g, '')
+    .split('')
+    .reverse()
+    .join('')
+    .toUpperCase();
+  return str.replace(/[^A-Za-zА-Яа-яЁё]/g, '')
+    .toUpperCase() === reversedStr;
+};
 module.exports = isPalindrome;
