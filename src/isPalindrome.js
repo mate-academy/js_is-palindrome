@@ -18,8 +18,13 @@
  *
  * @return {boolean}
  */
-function isPalindrome(str) {
-  // write code here
-}
+
+const isPalindrome = string => {
+  const pattern = /\W/g;
+  const cleared = string.replace(pattern, '').toLowerCase();
+  const reversed = cleared.split('').reverse().join('');
+
+  return cleared === reversed;
+};
 
 module.exports = isPalindrome;
