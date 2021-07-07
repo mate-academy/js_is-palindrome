@@ -19,7 +19,14 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const alphabetStr = str.replace(/\W/g, '').toLocaleLowerCase();
+  const alphabetStrCenter = alphabetStr.length / 2;
+  let testStr = '';
+  
+  for (let i = 0; i < alphabetStrCenter; i++) {
+    testStr = alphabetStr[i] + testStr;
+  }
+  return alphabetStr.search(testStr) !== -1;
 }
 
 module.exports = isPalindrome;
