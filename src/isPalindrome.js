@@ -19,7 +19,7 @@
  * @return {boolean}
  */
 function isPalindrome(str) {
-  // write code here
+  const normalizedStr = str.replace(/\W+/g, '').toUpperCase();
+  return normalizedStr.split('').reverse().join('') === normalizedStr;
 }
-
 module.exports = isPalindrome;
